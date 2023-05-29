@@ -1,0 +1,52 @@
+
+.btn-style-one {
+  position: relative;
+  display: flex;
+  font-size: 12px;
+  line-height: 24px;
+  padding: 15px 60px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  overflow: hidden;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 50px;
+  z-index: 1;
+  background: black;
+  -webkit-transition: all 500ms ease;
+  transition: all 500ms ease;
+}
+.btn-style-one:before {
+  position: absolute;
+  display: flex;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  content: "";
+  background-color: black;
+  clip-path: polygon(50% 0, 50% 0, 50% 50%, 50% 100%, 50% 100%, 50% 50%);
+  transition: all 500ms ease;
+  z-index: -1;
+}
+.btn-style-one:hover:before {
+  clip-path: polygon(25% -70%, 75% -70%, 120% 50%, 75% 170%, 25% 170%, -20% 50%);
+}
+.btn-style-one:hover {
+  color: #ffffff;
+}
+.btn-style-one.hvr-light:hover {
+  color: orange;
+}
+.btn-style-one.hvr-light:before {
+  background-color: #ffffff;
+}
+.btn-style-one.bg-light:not(hover) {
+  background-color: #ffffff !important;
+}
+.btn-style-one.bg-theme-color2 {
+  background: rgb(19, 13, 1);
+}
+.btn-style-one.bg-theme-color2:before {
+  background: rgb(230, 160, 9);
+}

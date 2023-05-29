@@ -7,6 +7,32 @@
   pointer-events: none;
 }
 
+.shadows{
+  box-shadow: 2px 7px 25px 15px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 2px 7px 25px 15px rgba(0, 0, 0, 0.05);
+}
+
+.main-footer .bg-image{
+  background-image: url("./components/assests/images/footer.jpg");
+  z-index: -1;
+}
+
+.active{
+  background-color: white;
+  font-weight: bold;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  color: orange;
+
+  .icon{
+    background-color: orangered;
+    color: white;
+    padding:10px;
+
+  }
+}
+
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -28,6 +54,9 @@
   color: #61dafb;
 }
 
+
+
+/* animations */
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -36,3 +65,8 @@
     transform: rotate(360deg);
   }
 }
+
+
+
+
+
