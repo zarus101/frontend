@@ -1,21 +1,44 @@
-import React from "react";
+import React, { useState } from "react";
 import { GridComponent, PageHeadingPicture, SectionTitle, Subtitle } from "../components/ui/Design";
-import { ButtonMain } from "../components/ui/Buttons";
+import { ButtonMain, SimpleButton } from "../components/ui/Buttons";
 import { BsTelephonePlusFill } from "react-icons/bs";
 import { IoMdMail } from "react-icons/io";
 import { FaPaperPlane } from "react-icons/fa";
+import { useDispatch } from "react-redux";
+import { createContact } from "../redux/reducer/contactSlice";
 
 const ContactIcons = [
-  { id: 1, title: "Have any question?", text: "Free +92 (020)-9850", icon:< BsTelephonePlusFill size={25}/> },
-  { id: 2, title: "Write email", text: "needhelp@company.com", icon:< IoMdMail size={25}/> },
-  { id: 3, title: "Visit anytime", text: "66 broklyn golden street. New York", icon: <FaPaperPlane size={25}/> },
+  { id: 1, title: "Have any question?", text: "Free +92 (020)-9850", icon: <BsTelephonePlusFill size={25} /> },
+  { id: 2, title: "Write email", text: "needhelp@company.com", icon: <IoMdMail size={25} /> },
+  { id: 3, title: "Visit anytime", text: "66 broklyn golden street. New York", icon: <FaPaperPlane size={25} /> },
 ];
 
 const Contact = () => {
+  const dispatch = useDispatch();
+  const [inputs, setInputs] = useState();
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setInputs({ ...inputs, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const contactData = {
+      name: inputs?.name,
+      email: inputs?.email,
+      subject: inputs?.subject,
+      phone: inputs?.phone,
+      message: inputs?.message,
+    };
+
+    await dispatch(createContact(contactData));
+  };
   return (
     <>
       <section className="team relative">
-      <PageHeadingPicture title="Contact"/>
+        <PageHeadingPicture title="Contact" />
         <div className="py-16">
           <div className="containers">
             <GridComponent col={2} gap={4}>
@@ -26,19 +49,18 @@ const Contact = () => {
                 <div className="my-10">
                   <SectionTitle text1="Feel free to write" />
                 </div>
-                <form>
-                  <GridComponent col={2} gap={4} >
-                    <input type="text" name="fullname" placeholder="Enter Name" className="bg-gray-200 w-full  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
-                    <input type="email" name="emailAddress" placeholder="Enter Email" className="bg-gray-200 w-full p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
-                    <input type="text" name="subject" placeholder="Enter Subject" className="bg-gray-200  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
-                    <input type="text" name="phoneNo" placeholder="Enter Phone" className="bg-gray-200 w-full p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
-
+                <form method="post" onSubmit={handleSubmit}>
+                  <GridComponent col={2} gap={4}>
+                    <input type="text" name="name" placeholder="Enter Name" value={inputs?.name || ""} onChange={(e) => handleInputChange(e)} className="bg-gray-200 w-full  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
+                    <input type="email" name="email" value={inputs?.email || ""} placeholder="Enter Email" onChange={(e) => handleInputChange(e)} className="bg-gray-200 w-full p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
+                    <input type="text" name="subject" value={inputs?.subject || ""} placeholder="Enter Subject" onChange={(e) => handleInputChange(e)} className="bg-gray-200  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
+                    <input type="number" name="phone" value={inputs?.phone || ''} placeholder="Enter Phone" onChange={(e) => handleInputChange(e)} className="bg-gray-200 w-full p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
                   </GridComponent>
-                  <textarea name="description" cols="30" rows="5" className="bg-gray-200 my-5 w-full outline-none p-3  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required></textarea>
-                  <ButtonMain text={"Send Message"} />
+                  <textarea name="message" value={inputs?.message || ""} cols="30" rows="5" onChange={(e) => handleInputChange(e)} className="bg-gray-200 my-5 w-full outline-none p-3  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                  <SimpleButton text="Send Message" />
                 </form>
               </div>
-              <div className="pl-20"  data-aos="fade-left" data-aos-duration="1500">
+              <div className="pl-20" data-aos="fade-left" data-aos-duration="1500">
                 <Subtitle text={"NEED ANY HELP?"} />
                 <div className="title flex justify-start w-full my-5">
                   <SectionTitle text1="Get in touch with us" />

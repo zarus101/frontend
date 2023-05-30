@@ -2,8 +2,8 @@ import axios from "axios";
 import { BACKEND_URL } from "./Helper";
 
 const API_URL = `${BACKEND_URL}/faq/`;
-const createFaq = async (formData) => {
-  const response = await axios.post(API_URL, formData);
+const createFaq = async (faqData) => {
+  const response = await axios.post(API_URL, faqData);
   return response.data;
 };
 

@@ -12,7 +12,7 @@ import { AdminLayout } from "./components/layouts/AdminLayout";
 import Courses from "./pages/courses/Courses";
 import SingleExtraCourse from "./pages/courses/SingleExtraCourse";
 import PageNotFound from "./components/commons/PageNotFound";
-import axios from "axios"
+import axios from "axios";
 
 import { useEffect } from "react";
 import "react-toastify/dist/ReactToastify.css";
@@ -33,8 +33,9 @@ import { AddTeam } from "./admin/AddTeam";
 import { useDispatch } from "react-redux";
 import { getLoginStatus } from "./redux/services/authService";
 import { SET_LOGIN } from "./redux/reducer/auth/authSlice";
+import ContactList from "./admin/ContactList";
 
-axios.defaults.withCredentials = true
+axios.defaults.withCredentials = true;
 
 function App() {
   const dispatch = useDispatch();
@@ -208,6 +209,16 @@ function App() {
               <Layout>
                 <AdminLayout>
                   <AddTeam />
+                </AdminLayout>
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/list-contact"
+            element={
+              <Layout>
+                <AdminLayout>
+                  <ContactList />
                 </AdminLayout>
               </Layout>
             }

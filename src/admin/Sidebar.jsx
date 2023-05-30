@@ -68,8 +68,8 @@ export const Sidebar = () => {
     },
     {
       id: 11,
-      name: "/admin/inquiry",
-      path: "/inquiry-list",
+      name: "contacts",
+      path: "/admin/list-contact",
       icon: <FiPhoneCall />,
     },
   ];

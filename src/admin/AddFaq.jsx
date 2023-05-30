@@ -1,35 +1,56 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, SubHeading, Title, WhiteCard } from "../components/ui/Design";
 import "react-quill/dist/quill.snow.css";
 import ReactQuill from "react-quill";
 import FaqList from "./FaqList";
+import { useDispatch, useSelector } from "react-redux";
+import { createFaq, getAllFaq, selectIsLoading } from "../redux/reducer/FaqSlice";
+import { SimpleButton } from "../components/ui/Buttons";
+import { Loader } from "../components/commons/Loader";
 
 export const AddFaq = () => {
+  const dispatch = useDispatch();
+  const [question, setQuestion] = useState("");
+  const [answer, setAnswer] = useState("");
+  const isLoading = useSelector(selectIsLoading);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const faqData = {
+      question: question,
+      answer: answer,
+    };
+    console.log(faqData)
+
+    await dispatch(createFaq(faqData));
+    await dispatch(getAllFaq());
+  };
   return (
     <>
       <section className="add_about">
-        <form action="">
-          <Card>
+        {isLoading && <Loader/>}
+        <Card>
           <div className="flex items-center text-center justify-center">
-              <h1 className="text-3xl font-medium capitalize">Manage your <span className="text-orange-500 font-bold">faq Section</span> </h1>
-            </div>          </Card>
+            <h1 className="text-3xl font-medium capitalize">
+              Manage your <span className="text-orange-500 font-bold">faq Section</span>{" "}
+            </h1>
+          </div>{" "}
+        </Card>
+        <form action="post" onSubmit={handleSubmit}>
           <div className="mt-10">
             <WhiteCard>
               <div>
                 <SubHeading>Question</SubHeading>
-                <input type="text" name="fullname" placeholder="Enter Name" className="bg-gray-200 w-full  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
+                <input type="text" name="question" placeholder="Enter question" value={question} onChange={(e)=> setQuestion(e.target.value)} className="bg-gray-200 w-full  p-6  focus:ring-1 focus:ring-blue-500 focus:border-blue-500" required />
               </div>
 
               <div>
                 <SubHeading>Answer</SubHeading>
-                <ReactQuill
-                  placeholder="write importance of this course"
-                  theme="snow"
-                  // value={description}
-                  // onChange={setDescription}
-                  modules={AddFaq.modules}
-                  formats={AddFaq.formats}
-                />
+                <ReactQuill placeholder="write anser fro above" theme="snow" value={answer} style={{ height: "200px" }} onChange={setAnswer} modules={AddFaq.modules} formats={AddFaq.formats} />
+              </div>
+              <div className="mt-10">
+                <SimpleButton text="Submit" />
               </div>
             </WhiteCard>
           </div>
