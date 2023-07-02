@@ -1,9 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { SectionTitle, Subtitle } from "../ui/Design";
 import { CountryCard } from "../cards/Cards";
-import { CountryData } from "../assests/dummyData";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllCountry } from "../../redux/reducer/countrySlice";
+import { toast } from "react-toastify";
 
 const Countries = () => {
+  const dispatch= useDispatch()
+  const {countries, isError, message}= useSelector((state)=> state.country)
+  useEffect(() => {
+    dispatch(getAllCountry())
+    if(isError){
+      toast.error(message)
+    }
+
+  }, [dispatch, isError, message])
+  
   return (
     <section className="p-10 my-20 relative ">
       <div className="absolute top-0 left-0 h-full w-full bg-service -z-[10]"></div>
@@ -18,8 +30,8 @@ const Countries = () => {
       </div>
      
         <div className="grid grid-cols-4 gap-[1rem] md:grid-cols-1 mobile:grid-cols-1">
-          {CountryData.map((item) => (
-            <CountryCard image={item.image} title={item.title} description={item.description} path={`/country/${item.slug}`} />
+          {countries.map((item) => (
+            <CountryCard image={item?.image?.filePath} title={item.title} description={item?.description} path={`/country/${item.slug}`} />
           ))}
         </div>
     </section>

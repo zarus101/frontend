@@ -22,9 +22,11 @@ export const navbarLinks = [
   { id: 1, name: "Home", path: "/" },
   { id: 2, name: "about us", path: "/about" },
   { id: 3, name: "courses", path: "/courses" },
+  { id: 4, name: "careers", path: "/careers" },
   { id: 5, name: "team", path: "/teams" },
   { id: 6, name: "Contact Us", path: "/contact" },
 ];
+
 
 export const icons = [
   {
@@ -160,14 +162,38 @@ export const TeamData = [
 
 export const CountryData = [
   { id: 1, image: country1, slug: "canadai7267", title: "canada", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
-  { id: 1, image: country2, slug: "japan675276", title: "japan", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
-  { id: 1, image: country3, slug: "australia675627", title: "australia", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
-  { id: 1, image: country4, slug: "southkorea675267", title: "south korea", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
+  { id: 2, image: country2, slug: "japan675276", title: "japan", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
+  { id: 3, image: country3, slug: "australia675627", title: "australia", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
+  { id: 4, image: country4, slug: "southkorea675267", title: "south korea", description: "Canada is a vast and rugged land. From north to south it spans more than half the Northern Hemisphere. It is the second largest country in the world, but it has only one-half of one percent of the world's population " },
 ];
 
 export const IeltsData = [
   { id: 1, image: ielts, slug: "ielts27t6752", title: "IELTS", description: "The International English Language Testing System (IELTS) is a standardized and widely recognized English language assessment test for international education and global migration. It evaluates the English language proficiency of non-native English speakers, who wish to study in or migrate to countries, where English is the language of communication.Established in 1989, IELTS is the world's most popular English language test. This language assessment test is developed by some of the world's leading language experts. It is designed to evaluate your English skills in reading, writing, listening, and speaking and your effectiveness in using the language to study, work and live in an English-speaking country." },
-  { id: 1, image: toelf, slug: "toefel652", title: "TOEFL", description: "The TEST of English as a Foreign Language (TOEFL ®) is a registered trademark of Educational Testing Services (ETS) and is administered worldwide. Almost 80% of the student who wishes to study in the US take this test. The TOEFL iBT measures how well you read, listen, speak and write in English and the integrated use of these skills together in the classroom. " },
-  { id: 1, image: pte, slug: "pte873", title: "PTE", description: "The PTE Academic exam is a computer-based English language test accepted by educational institutions around the world. The full form of  PTE is the Pearson Test of English. Known as an English language test for candidates looking to apply to universities or countries abroad that use English as their primary source of communication." },
-  { id: 1, image: eps, slug: "eps2566", title: "EPS", description: "Are you looking to learn the Korean language at home? If yes then please contact eTutorclass Nepal to know more about the Korean language online training course. We provide a specialized training program for candidates willing to learn Korean language through your own computer or mobile at home. We have brought online preparation class of EPS Korean Language." },
+  { id: 2, image: toelf, slug: "toefel652", title: "TOEFL", description: "The TEST of English as a Foreign Language (TOEFL ®) is a registered trademark of Educational Testing Services (ETS) and is administered worldwide. Almost 80% of the student who wishes to study in the US take this test. The TOEFL iBT measures how well you read, listen, speak and write in English and the integrated use of these skills together in the classroom. " },
+  { id: 3, image: pte, slug: "pte873", title: "PTE", description: "The PTE Academic exam is a computer-based English language test accepted by educational institutions around the world. The full form of  PTE is the Pearson Test of English. Known as an English language test for candidates looking to apply to universities or countries abroad that use English as their primary source of communication." },
+  { id: 4, image: eps, slug: "eps2566", title: "EPS", description: "Are you looking to learn the Korean language at home? If yes then please contact eTutorclass Nepal to know more about the Korean language online training course. We provide a specialized training program for candidates willing to learn Korean language through your own computer or mobile at home. We have brought online preparation class of EPS Korean Language." },
 ];
+
+
+
+
+export const careerCategories=[
+  {id:1, name:"Computing", description: "ndsindihi"},
+  {id:2, name:"Construction", description: "kjhwiohine"},
+  {id:3, name:"Digital Marketing", description: "skndkjcnkj"},
+  {id:4, name:"Graphics", description: "smndknnkc"},
+  {id:5, name:"Web development", description: "sjdbchbhb"},
+  {id:6, name:"android", description: "knjjsbjbhcbuhj"},
+]
+
+
+
+export const careers=[
+  {id: 1, title:"Full Satck developer" , category:"Web development",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!" },
+  {id: 2, title:"Graphic designer" , category:"Graphics",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!" },
+  {id: 3, title:"React Native developer" , category:"android",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!"},
+  {id: 4, title:"civil enginner" , category:"Construction",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!"},
+  {id: 5, title:"junior developer" , category:"Web development",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!" },
+  {id: 6, title:"digital marketing officer" , category:"Digital Marketing",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!" },
+  {id: 7, title:"SEO specialist" , category:"Computing",salary:50000, description: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus facere cum esse adipisci quidem reprehenderit praesentium minus culpa vitae animi! Magnam pariatur aut praesentium, nostrum minus nam incidunt illo animi!" },
+]

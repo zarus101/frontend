@@ -25,8 +25,6 @@ const ImageSlide = () => {
 
   const style2={
     transform: `translate(${-(mousePosition.x - 500) / 100}px, ${-(mousePosition.y - 500) / 100}px)`,
-
-
   }
   return (
     <>

@@ -7,6 +7,8 @@ import BlogReducer from "./reducer/blogSlice";
 import TeamReducer from "./reducer/teamSlice";
 import FaqReducer from "./reducer/FaqSlice";
 import ContactReducer from "./reducer/contactSlice";
+import CareerReducer from "./reducer/careerSlice";
+import CategoryReducer from "./reducer/categorySlice";
 
 export const store= configureStore({
     reducer: {
@@ -17,7 +19,9 @@ export const store= configureStore({
        blog: BlogReducer,
        team: TeamReducer,
        faq:FaqReducer,
-       contact: ContactReducer
+       contact: ContactReducer,
+       career: CareerReducer,
+       category: CategoryReducer,
 
     }
 })

@@ -19,7 +19,7 @@ export const loginUser = async (userData) => {
 export const getLoginStatus = async () => {
   try {
     const response = await myAxios.get("/loginstatus", {
-      withCredentials: true,
+      withCredentials: true
     });
     return response.data;
   } catch (error) {

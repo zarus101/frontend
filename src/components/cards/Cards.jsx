@@ -118,7 +118,7 @@ export const SingleCourseRightCard = ({ IeltsData, CountryData, NewsData }) => {
         <ul>
           {IeltsData && (
             <>
-              {IeltsData.map((item, i) => (
+              {IeltsData.slice(0,3).map((item, i) => (
                 <>
                   <li style={style} className="bb hover:bg-slate-50 rounded-2xl cursor-pointer">
                     <figure className="">
@@ -134,7 +134,7 @@ export const SingleCourseRightCard = ({ IeltsData, CountryData, NewsData }) => {
           )}
           {CountryData && (
             <>
-              {CountryData.map((item, i) => (
+              {CountryData.slice(0,3).map((item, i) => (
                 <>
                   <li style={style} className="bb hover:bg-slate-50 rounded-2xl cursor-pointer">
                     <figure className="">
@@ -150,7 +150,7 @@ export const SingleCourseRightCard = ({ IeltsData, CountryData, NewsData }) => {
           )}
           {NewsData && (
             <>
-              {NewsData.map((item, i) => (
+              {NewsData.slice(0,3).map((item, i) => (
                 <>
                   <li style={style} className="bb hover:bg-slate-50 rounded-2xl cursor-pointer">
                     <figure className="">

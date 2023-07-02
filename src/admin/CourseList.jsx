@@ -67,7 +67,7 @@ const CourseList = () => {
                 </tr>
               </thead>
               <tbody>
-                {courses.map((course, index) => (
+                {courses?.map((course, index) => (
                   <tr className="bg-white border-b hover:bg-gray-50" key={index}>
                     <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap">
                       {index + 1}

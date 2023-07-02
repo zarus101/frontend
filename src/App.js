@@ -34,6 +34,8 @@ import { useDispatch } from "react-redux";
 import { getLoginStatus } from "./redux/services/authService";
 import { SET_LOGIN } from "./redux/reducer/auth/authSlice";
 import ContactList from "./admin/ContactList";
+import { AddCareer } from "./admin/AddCareer";
+import Careers from "./pages/careers/Careers";
 
 axios.defaults.withCredentials = true;
 
@@ -80,6 +82,15 @@ function App() {
             element={
               <Layout>
                 <Courses />
+              </Layout>
+            }
+          />
+
+          <Route
+            path="/careers"
+            element={
+              <Layout>
+                <Careers />
               </Layout>
             }
           />
@@ -199,6 +210,16 @@ function App() {
               <Layout>
                 <AdminLayout>
                   <AddBlog />
+                </AdminLayout>
+              </Layout>
+            }
+          />
+          <Route
+            path="/admin/add-career"
+            element={
+              <Layout>
+                <AdminLayout>
+                  <AddCareer />
                 </AdminLayout>
               </Layout>
             }

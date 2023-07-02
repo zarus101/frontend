@@ -56,6 +56,12 @@ export const Sidebar = () => {
     },
     {
       id: 5,
+      name: "career",
+      path: "/admin/add-career",
+      icon: <AiOutlineFileAdd />,
+    },
+    {
+      id: 5,
       name: "team",
       path: "/admin/add-team",
       icon: <HiOutlineUserGroup />,
